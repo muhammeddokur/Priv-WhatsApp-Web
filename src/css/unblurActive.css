@@ -1,5 +1,6 @@
-/* Privacy Extension for WhatsApp(TM) Web                       */
+/* Priv WhatsApp Web                                            */
 /* Copyright (c) 2024 Lukas Lenhardt - lukaslen.com             */
+/* Copyright (c) 2026 Muhammed Erkam DOKUR                      */
 /* Released under the MIT license, see LICENSE file for details */
 
 /* former wa version (v2.2412.xx) */
@@ -131,7 +132,36 @@ body:hover div.x10l6tqk.x13vifvy.x17qophe.xh8yej3.xiqx3za.x6ikm8r.x10wlt62.x1knu
 body:hover div.x15e7hw7 /* business profile banner in catalog list */,
 body:hover div.x1n2onr6.x1oysuqx.x1m3v4wt.x1gryazu.xkrivgy /* group profile pic in details panel */,
 body:hover div.overlay:not([data-animate-media-viewer]) ._ajuf._ajuh > div /* user/group profile pic overlay view */,
-body:hover div.x1okw0bk.x1w0mnb /* user profile pic in starred message list */
+body:hover div.x1okw0bk.x1w0mnb /* user profile pic in starred message list */,
+
+/* stable attribute-based selectors */
+body:hover div[data-testid="msg-container"] span[data-testid="selectable-text"],
+body:hover div[data-testid="msg-container"] span.selectable-text,
+body:hover div[data-testid="msg-container"] [data-testid="tail-in"],
+body:hover div[data-testid="msg-container"] [data-testid="tail-out"],
+body:hover div[data-testid="cell-frame-secondary"] span,
+body:hover div[data-testid="cell-frame-secondary"],
+body:hover div[data-testid="msg-container"] img,
+body:hover div[data-testid="msg-container"] video,
+body:hover div[data-testid="msg-container"] [role="button"] [style*="background-image"],
+body:hover div[data-testid="msg-container"] a img,
+body:hover div[data-testid="msg-container"] button[aria-label*="mesaj" i],
+body:hover div[data-testid="msg-container"] button[aria-label*="message" i],
+body:hover div[data-testid="msg-container"] [role="slider"],
+body:hover div[data-testid="msg-container"] [data-testid="audio-preview"],
+body:hover div[data-testid="chat-info-drawer"] img,
+body:hover div[data-testid="media-gallery"] img,
+body:hover div.overlay img,
+body:hover div[data-animate-media-viewer] img,
+body:hover div[data-testid^="list-item-"] div[data-testid="cell-frame-title"] span,
+body:hover header[data-testid="conversation-header"] div[role="button"] span,
+body:hover header[data-testid="conversation-header"] span[title],
+body:hover div[data-testid="msg-container"] span[style*="color"],
+body:hover div[data-testid="chat-info-drawer"] h2,
+body:hover div[data-testid="chat-info-drawer"] div.x1evy7pa,
+body:hover div[data-testid^="list-item-"] img,
+body:hover header[data-testid="conversation-header"] img,
+body:hover div[data-testid="chat-info-drawer"] img
 {
   filter: blur(0) grayscale(0);
   transition-delay: 0s;
@@ -144,7 +174,13 @@ body:hover ._3Uu1_ /*textarea*/,
 /* updated wa version (v2.3000.xx) */
 /* textInput */
 div._ak1l:hover /* message text input */,
-div._ak1r:hover /* message text input */
+div._ak1r:hover /* message text input */,
+
+/* stable attribute-based selectors */
+body:hover div[data-testid="conversation-compose-box-input"],
+body:hover div.lexical-rich-text-input,
+div[data-testid="conversation-compose-box-input"]:hover,
+div.lexical-rich-text-input:hover
 {
   filter: grayscale(0) opacity(1);
 }

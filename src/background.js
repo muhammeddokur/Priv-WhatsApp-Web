@@ -1,5 +1,6 @@
-/* Privacy Extension for WhatsApp(TM) Web                       */
+/* Priv WhatsApp Web                                            */
 /* Copyright (c) 2024 Lukas Lenhardt - lukaslen.com             */
+/* Copyright (c) 2026 Muhammed Erkam DOKUR                      */
 /* Released under the MIT license, see LICENSE file for details */
 
 // Remove this upon Chrome supporting the browser namespace
@@ -38,7 +39,16 @@ const defaultSettings = {
     blurOnIdle: {
       isEnabled: false,
       idleTimeout: 15,
-    }
+    },
+    lockScreen: {
+      isEnabled: false,
+      idleTimeout: 60,
+      passwordHash: "",
+      isLocked: false
+    },
+    blurOnFocusLoss: false,
+    customBlurEnabled: false,
+    customBlurList: []
   }
 };
 const requiredPermissions = { 
@@ -65,19 +75,27 @@ browser.runtime.onInstalled.addListener(() => {
   });
 });
 
-// Handle toggle command
+// Handle commands
 browser.commands.onCommand.addListener((command) => {
-  if (command != "toggle") return;
+  if (command === "toggle") {
+    browser.storage.sync.get([settingsIdentifier]).then((result) => {
+      if (!result.hasOwnProperty(settingsIdentifier)) {
+        browser.runtime.reload();
+        return;
+      }
 
-  browser.storage.sync.get([settingsIdentifier]).then((result) => {
-    if (!result.hasOwnProperty(settingsIdentifier)) {
-      browser.runtime.reload();
-      return;
-    }
-
-    result.settings.on = !result.settings.on;
-    browser.storage.sync.set(result);
-  });
+      result.settings.on = !result.settings.on;
+      browser.storage.sync.set(result);
+    });
+  } else if (command === "lock") {
+    browser.storage.sync.get([settingsIdentifier]).then((result) => {
+      if (!result.hasOwnProperty(settingsIdentifier)) return;
+      if (result.settings.lockScreen?.isEnabled && result.settings.lockScreen?.passwordHash) {
+        result.settings.lockScreen.isLocked = true;
+        browser.storage.sync.set(result);
+      }
+    });
+  }
 });
 
 // Update icon on setting change

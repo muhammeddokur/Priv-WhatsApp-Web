@@ -1,5 +1,6 @@
-/* Privacy Extension for WhatsApp(TM) Web                       */
+/* Priv WhatsApp Web                                            */
 /* Copyright (c) 2024 Lukas Lenhardt - lukaslen.com             */
+/* Copyright (c) 2026 Muhammed Erkam DOKUR                      */
 /* Released under the MIT license, see LICENSE file for details */
 
 /* former wa version (v2.2412.xx) */
@@ -21,7 +22,11 @@ div._amk4 > div[role="button"] /* user profile pic in group chat messages */,
 div._ahz2 /* user profile pic in contact attachment */,
 div.x2lah0s.x1c4vz4f.xdl72j9.x194xeti /* user profile pic in multiple contact attachment */,
 div._ak4m /* user profile pic in voice note chat */,
-div.overlay ._ak8h /* user profile pic in overlay media view */
+div.overlay ._ak8h /* user profile pic in overlay media view */,
+
+/* stable attribute-based selectors */
+div[data-testid^="list-item-"] img,
+header[data-testid="conversation-header"] img
 {
   filter: blur(var(--pp-blur)) grayscale(1);
   transition-delay: 0s;
@@ -36,7 +41,10 @@ div[role="button"][class="x1n2onr6 x14yjl9h xudhj91 x18nykt9 xww2gxu"] /* busine
 div.x10l6tqk.x13vifvy.x17qophe.xh8yej3.xiqx3za.x6ikm8r.x10wlt62.x1knukwh.xihgre1 /* business profile banner in details panel */,
 div.x15e7hw7 /* business profile banner in catalog list */,
 div.x1n2onr6.x1oysuqx.x1m3v4wt.x1gryazu.xkrivgy /* group profile pic in details panel */,
-div.overlay:not([data-animate-media-viewer]) ._ajuf._ajuh > div /* user/group profile pic overlay view */
+div.overlay:not([data-animate-media-viewer]) ._ajuf._ajuh > div /* user/group profile pic overlay view */,
+
+/* stable attribute-based selectors */
+div[data-testid="chat-info-drawer"] img
 {
   filter: blur(var(--pp-lg-blur)) grayscale(1);
   transition-delay: 0s;
@@ -80,7 +88,15 @@ div.x10l6tqk.x13vifvy.x17qophe.xh8yej3.xiqx3za.x6ikm8r.x10wlt62.x1knukwh.xihgre1
 div.x15e7hw7:hover /* business profile banner in catalog list */,
 div.x1n2onr6.x1oysuqx.x1m3v4wt.x1gryazu.xkrivgy:hover /* group profile pic in details panel */,
 div.overlay:not([data-animate-media-viewer]) ._ajuf._ajuh > div:hover /* user/group profile pic overlay view */,
-div.x1okw0bk.x1w0mnb:hover /* user profile pic in starred message list */
+div.x1okw0bk.x1w0mnb:hover /* user profile pic in starred message list */,
+
+/* stable attribute-based selectors */
+div[data-testid^="list-item-"] img:hover,
+div[data-testid^="list-item-"]:hover img,
+header[data-testid="conversation-header"] img:hover,
+header[data-testid="conversation-header"]:hover img,
+div[data-testid="chat-info-drawer"] img:hover,
+div[data-testid="chat-info-drawer"]:hover img
 {
   filter: blur(0) grayscale(0);
   transition-delay: 0.3s;

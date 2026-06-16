@@ -1,5 +1,6 @@
-/* Privacy Extension for WhatsApp(TM) Web                       */
+/* Priv WhatsApp Web                                            */
 /* Copyright (c) 2024 Lukas Lenhardt - lukaslen.com             */
+/* Copyright (c) 2026 Muhammed Erkam DOKUR                      */
 /* Released under the MIT license, see LICENSE file for details */
 
 /* former wa version (v2.2412.xx) */
@@ -39,7 +40,15 @@ div.xlm9qay.x1s688f.x1e56ztr + div /* business short details in details info */,
 div.x2b8uid > .xzueoph + div /* business category in details info */,
 div.xkhd6sd:not([role]) > ._ajxu > div /* business about in details info */,
 div.xkhd6sd._ajxt > ._ajxu > div /* business phone number details in details info */,
-div._ak1d > div:first-child > div:first-child > :not(:first-child) /* user/group name in starred message list */
+div._ak1d > div:first-child > div:first-child > :not(:first-child) /* user/group name in starred message list */,
+
+/* stable attribute-based selectors */
+div[data-testid^="list-item-"] div[data-testid="cell-frame-title"] span,
+header[data-testid="conversation-header"] div[role="button"] span,
+header[data-testid="conversation-header"] span[title],
+div[data-testid="msg-container"] span[style*="color"],
+div[data-testid="chat-info-drawer"] h2,
+div[data-testid="chat-info-drawer"] div.x1evy7pa
 {
   filter: blur(var(--nm-blur)) grayscale(1);
   transition-delay: 0s;
@@ -82,7 +91,17 @@ div.xlm9qay.x1s688f.x1e56ztr + div:hover /* business short details in details in
 div.x2b8uid > .xzueoph + div:hover /* business category in details info */,
 div.xkhd6sd:not([role]) > ._ajxu > div:hover /* business about in details info */,
 div.xkhd6sd._ajxt > ._ajxu > div:hover /* business phone number in details info */,
-div._ak1d > div:first-child > div:first-child > :not(:first-child):hover /* user/group name in starred message list */
+div._ak1d > div:first-child > div:first-child > :not(:first-child):hover /* user/group name in starred message list */,
+
+/* stable attribute-based selectors */
+div[data-testid^="list-item-"] div[data-testid="cell-frame-title"] span:hover,
+div[data-testid^="list-item-"]:hover div[data-testid="cell-frame-title"] span,
+header[data-testid="conversation-header"] div[role="button"] span:hover,
+header[data-testid="conversation-header"]:hover span[title],
+div[data-testid="msg-container"] span[style*="color"]:hover,
+div[data-testid="msg-container"]:hover span[style*="color"],
+div[data-testid="chat-info-drawer"] h2:hover,
+div[data-testid="chat-info-drawer"] div.x1evy7pa:hover
 {
   filter: blur(0) grayscale(0);
   transition-delay: 0.3s;

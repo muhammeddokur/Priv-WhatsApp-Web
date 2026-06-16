@@ -40,6 +40,12 @@ function saveSettings() {
       result.settings.on = checked;
     } else if (id === "blurOnIdle") {
       result.settings.blurOnIdle.isEnabled = checked;
+    } else if (id === "lockScreenEnabled") {
+      result.settings.lockScreen.isEnabled = checked;
+    } else if (id === "blurOnFocusLoss") {
+      result.settings.blurOnFocusLoss = checked;
+    } else if (id === "customBlurEnabled") {
+      result.settings.customBlurEnabled = checked;
     } else {
       result.settings.styles[id] = checked;
     }
@@ -94,6 +100,12 @@ browser.storage.sync.get([settingsIdentifier]).then((result) => {
       checkbox.checked = result.settings.on;
     } else if (id === "blurOnIdle") {
       checkbox.checked = result.settings?.blurOnIdle?.isEnabled;
+    } else if (id === "lockScreenEnabled") {
+      checkbox.checked = result.settings?.lockScreen?.isEnabled;
+    } else if (id === "blurOnFocusLoss") {
+      checkbox.checked = result.settings?.blurOnFocusLoss;
+    } else if (id === "customBlurEnabled") {
+      checkbox.checked = result.settings?.customBlurEnabled;
     } else {
       checkbox.checked = result.settings.styles[id];
     }
@@ -109,5 +121,141 @@ browser.storage.sync.get([settingsIdentifier]).then((result) => {
       numInput.value = parseInt(result.settings.varStyles[varName]);
     }
   })
+
+  // load lockScreen values
+  if (result.settings.lockScreen) {
+    document.getElementById("lockScreenTimeout").value = result.settings.lockScreen.idleTimeout || 60;
+  }
+
+  // load custom chats list
+  renderCustomChatsList(result.settings.customBlurList || []);
   
+});
+
+// Simple Hash function for password
+function hashPassword(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) - hash + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return hash.toString();
+}
+
+// Custom chats list renderer
+function renderCustomChatsList(list) {
+  const container = document.getElementById("customChatsList");
+  if (!container) return;
+  container.innerHTML = "";
+  if (!list || list.length === 0) {
+    container.innerHTML = "<div style='color: #888; text-align: center; padding: 5px;'>No chats added.</div>";
+    return;
+  }
+  list.forEach(name => {
+    const div = document.createElement("div");
+    div.style = "display: flex; justify-content: space-between; align-items: center; padding: 2px 5px; border-bottom: 1px solid #f0f0f0;";
+    div.innerHTML = `<span>${escapeHTML(name)}</span><span class="remove-chat-btn" data-name="${escapeHTML(name)}" style="color: red; cursor: pointer; font-weight: bold; font-size: 12px; padding: 0 4px;">×</span>`;
+    container.appendChild(div);
+  });
+
+  document.querySelectorAll(".remove-chat-btn").forEach(btn => {
+    btn.addEventListener("click", function() {
+      const nameToRemove = this.dataset.name;
+      browser.storage.sync.get([settingsIdentifier]).then((result) => {
+        if (!result.hasOwnProperty(settingsIdentifier)) return;
+        result.settings.customBlurList = (result.settings.customBlurList || []).filter(n => n !== nameToRemove);
+        browser.storage.sync.set(result).then(() => {
+          renderCustomChatsList(result.settings.customBlurList);
+        });
+      });
+    });
+  });
+}
+
+function escapeHTML(str) {
+  return str.replace(/[&<>'"]/g, 
+    tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
+  );
+}
+
+// Event Listeners for Lock Screen
+document.getElementById("saveLockPassword").addEventListener("click", () => {
+  const pwdInput = document.getElementById("lockPassword");
+  const pwd = pwdInput.value.trim();
+  if (!pwd) return;
+  browser.storage.sync.get([settingsIdentifier]).then((result) => {
+    if (!result.hasOwnProperty(settingsIdentifier)) return;
+    if (!result.settings.lockScreen) result.settings.lockScreen = {};
+    result.settings.lockScreen.passwordHash = hashPassword(pwd);
+    browser.storage.sync.set(result).then(() => {
+      pwdInput.value = "";
+      pwdInput.placeholder = "Password Set!";
+      setTimeout(() => { pwdInput.placeholder = "Set Password"; }, 2000);
+    });
+  });
+});
+
+document.getElementById("saveLockTimeout").addEventListener("click", () => {
+  const timeoutInput = document.getElementById("lockScreenTimeout");
+  const timeoutVal = parseInt(timeoutInput.value) || 60;
+  browser.storage.sync.get([settingsIdentifier]).then((result) => {
+    if (!result.hasOwnProperty(settingsIdentifier)) return;
+    if (!result.settings.lockScreen) result.settings.lockScreen = {};
+    result.settings.lockScreen.idleTimeout = timeoutVal;
+    browser.storage.sync.set(result);
+  });
+});
+
+document.getElementById("lockNowBtn").addEventListener("click", () => {
+  browser.storage.sync.get([settingsIdentifier]).then((result) => {
+    if (!result.hasOwnProperty(settingsIdentifier)) return;
+    if (result.settings.lockScreen?.passwordHash) {
+      result.settings.lockScreen.isLocked = true;
+      browser.storage.sync.set(result);
+    } else {
+      alert("Please set a password first.");
+    }
+  });
+});
+
+// Event Listeners for Custom Chat Blur
+document.getElementById("addCustomChatBtn").addEventListener("click", () => {
+  const nameInput = document.getElementById("newCustomChatName");
+  const nameVal = nameInput.value.trim().toLowerCase();
+  if (!nameVal) return;
+  browser.storage.sync.get([settingsIdentifier]).then((result) => {
+    if (!result.hasOwnProperty(settingsIdentifier)) return;
+    if (!result.settings.customBlurList) result.settings.customBlurList = [];
+    if (!result.settings.customBlurList.includes(nameVal)) {
+      result.settings.customBlurList.push(nameVal);
+      browser.storage.sync.set(result).then(() => {
+        nameInput.value = "";
+        renderCustomChatsList(result.settings.customBlurList);
+      });
+    }
+  });
+});
+
+document.getElementById("addActiveChatBtn").addEventListener("click", () => {
+  browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
+    if (tabs.length === 0) return;
+    browser.tabs.sendMessage(tabs[0].id, { action: "getActiveChatName" }).then((response) => {
+      if (response && response.chatName) {
+        const nameToAdd = response.chatName.trim().toLowerCase();
+        if (!nameToAdd) return;
+        browser.storage.sync.get([settingsIdentifier]).then((result) => {
+          if (!result.hasOwnProperty(settingsIdentifier)) return;
+          if (!result.settings.customBlurList) result.settings.customBlurList = [];
+          if (!result.settings.customBlurList.includes(nameToAdd)) {
+            result.settings.customBlurList.push(nameToAdd);
+            browser.storage.sync.set(result).then(() => {
+              renderCustomChatsList(result.settings.customBlurList);
+            });
+          }
+        });
+      }
+    }).catch(err => {
+      console.log("Could not message contentScript. Is WhatsApp open?", err);
+    });
+  });
 });

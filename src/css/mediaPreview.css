@@ -1,5 +1,6 @@
-/* Privacy Extension for WhatsApp(TM) Web                       */
+/* Priv WhatsApp Web                                            */
 /* Copyright (c) 2024 Lukas Lenhardt - lukaslen.com             */
+/* Copyright (c) 2026 Muhammed Erkam DOKUR                      */
 /* Released under the MIT license, see LICENSE file for details */
 
 /* former wa version (v2.2412.xx) */
@@ -33,7 +34,17 @@ span._ajxd._ajxk > ._ajxj._ajxd /* sticker in chat panel */,
 div.xz9dduz > div:first-child /* maps / location */,
 div._ajwt > div:first-child > div:nth-child(2) > div /* media preview in send media */,
 div._ak3i /* media preview thumb in send media */,
-div._ajwt .xm0mufa > div /* document filename in send media */
+div._ajwt .xm0mufa > div /* document filename in send media */,
+
+/* stable attribute-based selectors */
+div[data-testid="msg-container"] img,
+div[data-testid="msg-container"] video,
+div[data-testid="msg-container"] [role="button"] [style*="background-image"],
+div[data-testid="msg-container"] a img,
+div[data-testid="msg-container"] button[aria-label*="mesaj" i],
+div[data-testid="msg-container"] button[aria-label*="message" i],
+div[data-testid="msg-container"] [role="slider"],
+div[data-testid="msg-container"] [data-testid="audio-preview"]
 {
   filter: blur(var(--mdp-blur)) grayscale(1);
   transition: initial; /* fix link preview delay */
@@ -75,7 +86,21 @@ span._ajxd._ajxk > ._ajxj._ajxd:hover /* sticker in chat panel */,
 div.xz9dduz > div:first-child:hover /* maps / location */,
 div._ajwt > div:first-child > div:nth-child(2) > div:hover /* media preview in send media */,
 div._ak3i:hover /* media preview thumb in send media */,
-div._ajwt .xm0mufa > div:hover /* document filename in send media */
+div._ajwt .xm0mufa > div:hover /* document filename in send media */,
+
+/* stable attribute-based selectors */
+div[data-testid="msg-container"]:hover img,
+div[data-testid="msg-container"]:hover video,
+div[data-testid="msg-container"]:hover [role="button"] [style*="background-image"],
+div[data-testid="msg-container"]:hover a img,
+div[data-testid="msg-container"]:hover button[aria-label*="mesaj" i],
+div[data-testid="msg-container"]:hover button[aria-label*="message" i],
+div[data-testid="msg-container"]:hover [role="slider"],
+div[data-testid="msg-container"]:hover [data-testid="audio-preview"],
+div[data-testid="msg-container"] img:hover,
+div[data-testid="msg-container"] video:hover,
+div[data-testid="msg-container"] button[aria-label*="mesaj" i]:hover,
+div[data-testid="msg-container"] button[aria-label*="message" i]:hover
 {
   filter: blur(0) grayscale(0);
   transition-delay: 0.3s;
@@ -86,7 +111,10 @@ div._ajwt .xm0mufa > div:hover /* document filename in send media */
 ._1qNn2 ._1nCcB /*set pseudo background on sticker*/,
 
 /* updated wa version (v2.3000.xx) */
-span._ajxd._ajxk > ._ajxj._ajxd /*set pseudo background on sticker*/
+span._ajxd._ajxk > ._ajxj._ajxd /*set pseudo background on sticker*/,
+
+/* stable attribute-based selectors */
+div[data-testid="msg-container"] img.xkbwmgf.x1xgig3j.x1ypdohk
 {
   background-color: var(--incoming-background) !important;
   border-radius: 7.5px !important;

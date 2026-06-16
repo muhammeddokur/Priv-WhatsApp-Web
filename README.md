@@ -55,6 +55,27 @@ This extension is developed by **Muhammed Erkam DOKUR** and is built on top of t
 
 ---
 
+## Screenshots
+
+### Redesigned Cyber-Blue/Cyan Extension Menu
+<p align="center">
+  <img src="screenshots/popup_top.png" width="270" alt="Priv WhatsApp Web Popup Top">
+  <img src="screenshots/popup_bottom.png" width="270" alt="Priv WhatsApp Web Popup Bottom">
+</p>
+
+### Advanced Security Overlays
+- **Screen Lock Overlay**: Protects your session with a local password hash.
+<p align="center">
+  <img src="screenshots/lock_screen.png" width="500" alt="Screen Lock Overlay">
+</p>
+
+- **Focus Loss Blur**: Instantly blurs/hides the page when tab/window focus is lost.
+<p align="center">
+  <img src="screenshots/focus_loss_blur.png" width="500" alt="Focus Loss Blur">
+</p>
+
+---
+
 ## How to Install (For Developers / Local Testing)
 1. Clone or download this repository.
 2. In Google Chrome, go to `chrome://extensions/`.

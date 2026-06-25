@@ -1,0 +1,143 @@
+{
+    "extensionName": {
+        "message": "Priv WhatsApp Web"
+    },
+    "extensionDescription": {
+        "message": "Verbirgt Ihre Nachrichten, bis Sie mit der Maus über sie gehen."
+    },
+    "extensionShortcut": {
+        "message": "Ein-/Ausschalten"
+    },
+    "extensionToggle": {
+        "message": "Ein-/Ausschalten"
+    },
+    "extensionSettings": {
+        "message": "Einstellungen"
+    },
+    "toggleMessages": {
+        "message": "Alle Nachrichten im Chat"
+    },
+    "toggleMessagesDescription": {
+        "message": "Verbirgt alle Nachrichten im Chat."
+    },
+    "toggleMessagesPreview": {
+        "message": "Nachrichtenvorschau"
+    },
+    "toggleMessagesPreviewDescription": {
+        "message": "Verbirgt alle Nachrichtenvorschauen auf der linken Seite."
+    },
+    "toggleMediaPreview": {
+        "message": "Medienvorschau"
+    },
+    "toggleMediaPreviewDescription": {
+        "message": "Verbirgt alle Bilder, Videos, Sticker usw. separat vom Text."
+    },
+    "toggleMediaGallery": {
+        "message": "Mediengalerie"
+    },
+    "toggleMediaGalleryDescription": {
+        "message": "Verbirgt alle kleinen Vorschau-Symbole von Bildern, Videos usw., während Sie ein Bild, Video usw. betrachten."
+    },
+    "toggleTextInput": {
+        "message": "Texteingabe"
+    },
+    "toggleTextInputDescription": {
+        "message": "Macht die Farbe in Ihrem Eingabefeld heller, um sie schwer lesbar zu machen."
+    },
+    "toggleProfilePic": {
+        "message": "Profilbilder"
+    },
+    "toggleProfilePicDescription": {
+        "message": "Verbirgt alle Profilbilder."
+    },
+    "toggleName": {
+        "message": "Gruppen-/Benutzernamen"
+    },
+    "toggleNameDescription": {
+        "message": "Verbirgt alle Gruppen- und Benutzernamen."
+    },
+    "toggleNoDelay": {
+        "message": "Keine Übergangsverzögerung"
+    },
+    "toggleNoDelayDescription": {
+        "message": "Ermöglicht es Ihnen, die Verzögerung vor dem Anzeigen eines Elements beim Überfahren mit der Maus auszuschalten."
+    },
+    "toggleUnblurActive": {
+        "message": "Alle bei App-Hover sichtbar machen"
+    },
+    "toggleUnblurActiveDescription": {
+        "message": "Macht alles sichtbar, wenn Sie mit der Maus über WhatsApp Web-App stehen."
+    },
+    "toggleBlurOnIdle": {
+        "message": "Verstecke WhatsApp bei Abwesenheit"
+    },
+    "toggleBlurOnIdleDescription": {
+        "message": "Verstecke WhatsApp nach einer gewissen Zeit, sobald keine Maus/Tastatur Eingabe erkannt wird."
+    },
+    "resetValue": {
+        "message": "Zurücksetzen"
+    },
+    "blurInputLabel": {
+        "message": "Intensität"
+    },
+    "msBlurInputDescription": {
+        "message": "Setze Intensität für alle Nachrichten (in pixel)."
+    },
+    "mspBlurInputDescription": {
+        "message": "Setze Intensität für Nachrichtenvorschau (in pixel)."
+    },
+    "mdpBlurInputDescription": {
+        "message": "Setze Intensität für Medienvorschau (in pixel)."
+    },
+    "mdgBlurInputDescription": {
+        "message": "Setze Intensität für Mediengalerie (in pixel)."
+    },
+    "ppSmBlurInputLabel": {
+        "message": "Intensität kleine Größe"
+    },
+    "ppSmBlurInputDescription": {
+        "message": "Setze Intensität für kleine Profilbilder (in pixel)."
+    },
+    "ppBlurInputLabel": {
+        "message": "Intensität normale Größe"
+    },
+    "ppBlurInputDescription": {
+        "message": "Setze Intensität für normale Profilbilder (in pixel)."
+    },
+    "ppLgBlurInputLabel": {
+        "message": "Intensität große Größe"
+    },
+    "ppLgBlurInputDescription": {
+        "message": "Setze Intensität für große Profilbilder (in pixel)."
+    },
+    "nmBlurInputDescription": {
+        "message": "Setze Intensität für Gruppen-/Benutzernamen (in pixel)."
+    },
+    "itBlurInputLabel": {
+        "message": "Abwesenheitslimit"
+    },
+    "itBlurInputDescription": {
+        "message": "Setze Zeit der Inaktivität (in seconds)."
+    },
+    "wiBlurInputLabel": {
+        "message": "Intensität"
+    },
+    "wiBlurInputDescription": {
+        "message": "Setze Intensität wenn Abwesend."
+    },
+    "footerBugReports": {
+        "message": "Fehlerberichte & Vorschläge"
+    },
+    "footerBugReportsDescription": {
+        "message": "Wenn Sie Probleme haben oder einen Funktionswunsch haben, senden Sie bitte eine E-Mail: contact@lukaslen.com"
+    },
+    "footerAuthor": {
+        "message": "Autor"
+    },
+    "footerReleaseNotes": {
+        "message": "Versionshinweise"
+    },
+    "footerReleaseNotesDescription": {
+        "message": "Versionshinweise anzeigen."
+    }
+}

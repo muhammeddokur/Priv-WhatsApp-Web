@@ -1,0 +1,35 @@
+/* Priv WhatsApp Web                                            */
+/* Copyright (c) 2024 Lukas Lenhardt - lukaslen.com             */
+/* Copyright (c) 2026 Muhammed Erkam DOKUR                      */
+/* Released under the MIT license, see LICENSE file for details */
+
+/* former wa version (v2.2412.xx) */
+._3Uu1_ /* textarea */,
+
+/* updated wa version (v2.3000.xx) */
+div._ak1l /* message text input */,
+div._ak1r /* message text input */,
+
+/* stable attribute-based selectors */
+div[data-testid="conversation-compose-box-input"],
+div.lexical-rich-text-input
+{
+  filter: grayscale(1) opacity(0.25);
+}
+
+/* former wa version (v2.2412.xx) */
+._3Uu1_:hover /* textarea */,
+
+/* updated wa version (v2.3000.xx) */
+div._ak1l:hover /* message text input */,
+div._ak1r:hover /* message text input */,
+
+/* stable attribute-based selectors */
+div[data-testid="conversation-compose-box-input"]:hover,
+div[data-testid="conversation-compose-box-input"]:focus,
+div.lexical-rich-text-input:hover,
+div.lexical-rich-text-input:focus-within
+{
+  filter: grayscale(0) opacity(1);
+  transition-delay: 0.3s;
+}

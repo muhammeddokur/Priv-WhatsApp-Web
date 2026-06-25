@@ -77,14 +77,22 @@ This extension is developed by **Muhammed Erkam DOKUR** and is built on top of t
 ---
 
 ## How to Install (For Developers / Local Testing)
+
+### Google Chrome (and Chromium-based browsers)
 1. Clone or download this repository.
-2. In Google Chrome, go to `chrome://extensions/`.
-3. Enable **Developer mode** (top-right corner switch).
-4. Click **Load unpacked** (top-left button).
+2. Open Google Chrome and navigate to `chrome://extensions/`.
+3. Enable **Developer mode** (toggle in the top-right corner).
+4. Click **Load unpacked** (button in the top-left).
 5. Select the `src` folder from this project directory.
 6. The extension is now loaded and active!
 
-
+### Mozilla Firefox
+1. Clone or download this repository.
+2. Open Mozilla Firefox and navigate to `about:debugging`.
+3. Click on **This Firefox** in the left sidebar.
+4. Click the **Load Temporary Add-on...** button.
+5. Select the `manifest.json` file located inside the `firefox` folder of this project directory.
+6. The extension is now loaded and active!
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

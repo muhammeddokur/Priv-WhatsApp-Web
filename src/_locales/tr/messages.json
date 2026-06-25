@@ -1,0 +1,185 @@
+{
+    "extensionName": {
+        "message": "Priv WhatsApp Web"
+    },
+    "extensionDescription": {
+        "message": "Siz üzerlerine gelene kadar mesajlarınızı gizler."
+    },
+    "extensionShortcut": {
+        "message": "Aç/Kapat"
+    },
+    "extensionToggle": {
+        "message": "Etkinleştir"
+    },
+    "extensionSettings": {
+        "message": "Ayarlar"
+    },
+    "toggleMessages": {
+        "message": "Sohbetteki tüm mesajlar"
+    },
+    "toggleMessagesDescription": {
+        "message": "Sohbetteki tüm mesajları blurlar."
+    },
+    "toggleMessagesPreview": {
+        "message": "Son mesaj önizlemesi"
+    },
+    "toggleMessagesPreviewDescription": {
+        "message": "Soldaki tüm mesaj önizlemelerini blurlar."
+    },
+    "toggleMediaPreview": {
+        "message": "Medya önizlemesi"
+    },
+    "toggleMediaPreviewDescription": {
+        "message": "Metinden bağımsız olarak tüm görselleri, videoları, çıkartmaları vb. blurlar."
+    },
+    "toggleMediaGallery": {
+        "message": "Medya galerisi"
+    },
+    "toggleMediaGalleryDescription": {
+        "message": "Bir görsel, video vb. görüntülerken alt kısımdaki küçük önizleme ikonlarını blurlar."
+    },
+    "toggleTextInput": {
+        "message": "Metin girişi alanı"
+    },
+    "toggleTextInputDescription": {
+        "message": "Metin giriş alanındaki yazı rengini açıklaştırarak okunmasını zorlaştırır."
+    },
+    "toggleProfilePic": {
+        "message": "Profil resimleri"
+    },
+    "toggleProfilePicDescription": {
+        "message": "Tüm profil resimlerini blurlar."
+    },
+    "toggleName": {
+        "message": "Grup/Kullanıcı adları"
+    },
+    "toggleNameDescription": {
+        "message": "Tüm grup ve kullanıcı adlarını blurlar."
+    },
+    "toggleNoDelay": {
+        "message": "Gecikmeyi kaldır"
+    },
+    "toggleNoDelayDescription": {
+        "message": "İmleç üzerine getirildiğinde öğenin hemen görünmesini sağlar, gecikmeyi kapatır."
+    },
+    "toggleUnblurActive": {
+        "message": "Uygulama üzerinde tümünü göster"
+    },
+    "toggleUnblurActiveDescription": {
+        "message": "Fareyi WhatsApp Web penceresi üzerine getirdiğinizde tüm blurları kaldırır."
+    },
+    "toggleBlurOnIdle": {
+        "message": "Boşta Kaldığında Blurla"
+    },
+    "toggleBlurOnIdleDescription": {
+        "message": "Belirli bir süre fare/klavye hareketi olmadığında WhatsApp'ı blurlar."
+    },
+    "resetValue": {
+        "message": "Varsayılan Değere Sıfırla"
+    },
+    "blurInputLabel": {
+        "message": "Blur miktarı"
+    },
+    "msBlurInputDescription": {
+        "message": "Sohbetteki tüm mesajlar için blur miktarını ayarla (piksel cinsinden)."
+    },
+    "mspBlurInputDescription": {
+        "message": "Mesaj önizlemeleri için blur miktarını ayarla (piksel cinsinden)."
+    },
+    "mdpBlurInputDescription": {
+        "message": "Medya önizlemeleri için blur miktarını ayarla (piksel cinsinden)."
+    },
+    "mdgBlurInputDescription": {
+        "message": "Medya galerisi için blur miktarını ayarla (piksel cinsinden)."
+    },
+    "ppSmBlurInputLabel": {
+        "message": "Küçük boyutlu profil resmi blur miktarı"
+    },
+    "ppSmBlurInputDescription": {
+        "message": "Küçük boyutlu profil resimleri için blur miktarını ayarla (piksel cinsinden)."
+    },
+    "ppBlurInputLabel": {
+        "message": "Normal boyutlu profil resmi blur miktarı"
+    },
+    "ppBlurInputDescription": {
+        "message": "Normal boyutlu profil resimleri için blur miktarını ayarla (piksel cinsinden)."
+    },
+    "ppLgBlurInputLabel": {
+        "message": "Büyük boyutlu profil resmi blur miktarı"
+    },
+    "ppLgBlurInputDescription": {
+        "message": "Büyük boyutlu profil resimleri için blur miktarını ayarla (piksel cinsinden)."
+    },
+    "nmBlurInputDescription": {
+        "message": "Grup/Kullanıcı adları için blur miktarını ayarla (piksel cinsinden)."
+    },
+    "itBlurInputLabel": {
+        "message": "Boşta Kalma Süresi"
+    },
+    "itBlurInputDescription": {
+        "message": "Boşta kalma süresi sınırını ayarla (saniye cinsinden)."
+    },
+    "wiBlurInputLabel": {
+        "message": "Blur miktarı"
+    },
+    "wiBlurInputDescription": {
+        "message": "Boştayken uygulanacak blur miktarını ayarla."
+    },
+    "footerBugReports": {
+        "message": "Hata Raporları & Öneriler"
+    },
+    "footerBugReportsDescription": {
+        "message": "Bir sorunla karşılaştığınızda veya özellik isteğiniz olduğunda bana e-posta gönderin: contact@lukaslen.com"
+    },
+    "footerAuthor": {
+        "message": "Yazar"
+    },
+    "footerReleaseNotes": {
+        "message": "Sürüm notları"
+    },
+    "footerReleaseNotesDescription": {
+        "message": "Sürüm notlarını görüntüleyin."
+    },
+    "privacyProtection": {
+        "message": "Gizlilik Koruması"
+    },
+    "toggleScreenLock": {
+        "message": "Ekran Kilidi"
+    },
+    "toggleScreenLockDescription": {
+        "message": "Boşta kalındığında WhatsApp Web'i şifreyle kilitler"
+    },
+    "labelTimeout": {
+        "message": "Süre Sınırı:"
+    },
+    "placeholderSetPassword": {
+        "message": "Şifre Belirle"
+    },
+    "buttonSet": {
+        "message": "Ayarla"
+    },
+    "buttonLockNow": {
+        "message": "Şimdi Kilitle"
+    },
+    "toggleBlurOnFocusLoss": {
+        "message": "Odak Kaybında Blurla"
+    },
+    "toggleBlurOnFocusLossDescription": {
+        "message": "Sekme/pencere değiştirildiğinde WhatsApp Web'i blurlar"
+    },
+    "toggleSelectiveBlur": {
+        "message": "Seçici Blurlama"
+    },
+    "toggleSelectiveBlurDescription": {
+        "message": "Sadece seçilen sohbetleri blurlar"
+    },
+    "buttonAddActiveChat": {
+        "message": "+ Mevcut Sohbeti Blurla"
+    },
+    "placeholderEnterChatName": {
+        "message": "Sohbet adı girin..."
+    },
+    "buttonAdd": {
+        "message": "Ekle"
+    }
+}

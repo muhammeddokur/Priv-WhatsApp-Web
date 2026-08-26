@@ -505,6 +505,27 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
+// Scroll event listener to prevent hover states from triggering during scroll (fixes unblur bug)
+const scrollStyleEl = document.createElement('style');
+scrollStyleEl.id = "pfwa-scroll-style";
+scrollStyleEl.innerText = `
+  body.pfwa-is-scrolling {
+    pointer-events: none !important;
+  }
+`;
+document.head.appendChild(scrollStyleEl);
+
+let scrollHoverTimeout;
+window.addEventListener('scroll', () => {
+  if (!document.body.classList.contains('pfwa-is-scrolling')) {
+    document.body.classList.add('pfwa-is-scrolling');
+  }
+  clearTimeout(scrollHoverTimeout);
+  scrollHoverTimeout = setTimeout(() => {
+    document.body.classList.remove('pfwa-is-scrolling');
+  }, 50);
+}, true); // true for capture phase to catch scroll events on any child element
+
 // Runtime messages listener
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "getActiveChatName") {

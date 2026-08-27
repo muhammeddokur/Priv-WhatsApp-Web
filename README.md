@@ -3,6 +3,10 @@
 
 **Priv WhatsApp Web** is a modern, privacy-focused browser extension that secures your WhatsApp Web session in public spaces, offices, or shared computers. It blurs messages, user/group names, profile pictures, media previews, and input fields until you hover over them.
 
+### 📥 Download & Install
+- <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg" width="16"/> **Chrome Web Store:** [Get Priv WhatsApp Web for Chrome](https://chromewebstore.google.com/detail/priv-whatsapp-web/daekelhogfebpmjjgnempniomhadofcj?authuser=0&hl=tr)
+- <img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg" width="16"/> **Firefox Add-ons:** [Get Priv WhatsApp Web for Firefox](https://addons.mozilla.org/tr/firefox/addon/priv-whatsapp-web-by-med/)
+
 This project is a heavily enhanced, modernized, and redesigned fork of the original **[Privacy Extension for WhatsApp Web](https://github.com/LukasLen/Privacy-Extension-For-WhatsApp-Web)** by **Lukas Lenhardt**. It fixes all broken CSS selectors due to WhatsApp Web updates and adds advanced security features like Screen Lock, Focus Loss Blur, Global Hotkeys, and Selective Chat Blur.
 
 ---

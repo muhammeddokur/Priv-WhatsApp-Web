@@ -14,15 +14,17 @@ div._amk4 ._am2s /* sticker message */,
 span._amk7 /* Tail-out */,
 
 /* stable attribute-based selectors */
+div[role="row"] .copyable-text,
 div[data-testid="msg-container"] span[data-testid="selectable-text"],
 div[data-testid="msg-container"] span.selectable-text,
 div[data-testid="msg-container"] [data-testid="tail-in"],
 div[data-testid="msg-container"] [data-testid="tail-out"]
+
+
+
 {
-  filter: blur(var(--ms-blur)) grayscale(1);
+  filter: blur(var(--ms-blur)) grayscale(1) !important;
   transition-delay: 0s;
-  will-change: filter;
-  transform: translateZ(0);
 }
 /* former wa version (v2.2412.xx) */
 ._2AOIt /*normal message more padding*/
@@ -50,14 +52,18 @@ div._amk4 ._am2s:hover /* sticker message */,
 span._amk7:hover /* Tail-out */,
 
 /* stable attribute-based selectors */
+div[role="row"]:hover .copyable-text,
 div[data-testid="msg-container"] span[data-testid="selectable-text"]:hover,
 div[data-testid="msg-container"] span.selectable-text:hover,
 div[data-testid="msg-container"]:hover span[data-testid="selectable-text"],
 div[data-testid="msg-container"]:hover span.selectable-text,
 div[data-testid="msg-container"]:hover [data-testid="tail-in"],
 div[data-testid="msg-container"]:hover [data-testid="tail-out"]
+
+
+
 {
-  filter: blur(0) grayscale(0);
+  filter: blur(0) grayscale(0) !important;
   transition-delay: 0.3s;
 }
 

@@ -1,0 +1,12 @@
+## 🚀 What's New in v1.0.7 (The Ultimate Scroll Fix)
+
+This update definitively fixes the aggressive rendering bugs introduced by WhatsApp Web's latest virtual DOM optimizations.
+
+### 🛡️ Bug Fixes
+* **The "Unblur on Fast Scroll" Bug:** WhatsApp Web recently started stripping identifying CSS attributes (`data-testid`) from message containers and forcefully overriding filters to save CPU during rapid scrolling (using `Page Up` / `Page Down`). This caused messages to unexpectedly lose their blur. We have rewritten our privacy engine to target the innermost structural text wrapper (`.copyable-text`), which WhatsApp cannot strip, and enforced our blur rules with `!important` priority. 
+* **GPU Compositing Drops:** Removed experimental 3D hardware acceleration (`transform: translateZ(0)`) introduced in v1.0.6, which was causing Chromium browsers to proactively drop the blur filter during the rapid `translateY` coordinate changes of fast scrolling.
+
+Fast scrolling is now 100% resilient and your privacy is ironclad!
+
+### 📦 Installation
+If you want to manually install the extension without going through the Web Stores, download the respective `.zip` file from the **Assets** below, extract it, and load it into your browser using Developer Mode.
